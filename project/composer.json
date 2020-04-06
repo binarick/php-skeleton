@@ -1,0 +1,11 @@
+{
+    "name": "root/app",
+    "license": "",
+    "authors": [
+        {
+            "name": "binarick",
+            "email": "e891939139835@gmail.com"
+        }
+    ],
+    "require": {}
+}

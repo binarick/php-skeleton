@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx:
+    image: ${REGISTRY_ADDRESS}/nginx:${IMAGE_TAG}
+    restart: always
+    depends_on:
+      - php-fpm
+    ports:
+    - "80:80"
+  php-fpm:
+    image: ${REGISTRY_ADDRESS}/php-fpm:${IMAGE_TAG}
+    restart: always
+  php-cli:
+    image: ${REGISTRY_ADDRESS}/php-cli:${IMAGE_TAG}
