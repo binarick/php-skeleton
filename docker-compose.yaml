@@ -17,7 +17,7 @@ services:
     build:
       context: ./project/docker/development
       dockerfile: fpm.dockerfile
-    environment:
+#    environment:
 #      APP_DEBUG: 1  //example env
     volumes:
       - ./project:/app
@@ -26,7 +26,7 @@ services:
     build:
       context: ./project/docker/development
       dockerfile: cli.dockerfile
-    environment:
+#    environment:
 #      APP_DEBUG: 1 //example env
     volumes:
       - ./project:/app
