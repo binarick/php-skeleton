@@ -14,7 +14,7 @@ All you need to do, is install the Docker
  Done !!! You project ready for work
 
 #That you will get:
- 1. php:7.4-fpm
+ 1. php:7.4-fpm + xdebug
  2. php:7.4-cli + composer
  3. nginx:alpine latest version
 
