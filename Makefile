@@ -14,8 +14,8 @@ dc-build:
 
 # COMPOSER
 env-first-init:
-	#docker-compose run --rm php-cli composer init
 	docker-compose run --rm php-cli composer install
+	#add migration
 
 # Every day start init
 env-init:

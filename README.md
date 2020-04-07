@@ -15,13 +15,21 @@ All you need to do, is install the Docker
 
 #That you will get:
  1. php:7.4-fpm
- 2. php:7.4-cli
+ 2. php:7.4-cli + composer
  3. nginx:alpine latest version
 
 - Build for Production and Development
-- Composer install on fpm & cli
+- Composer install on CLI only (FPM clear)
+- Composer remove from production images
 - Multistage build (super fast build for production)
 - Small production image (only code, no composer)
+- Mount you local SRC folder in FPM and CLI
+- Developer dependencies will not be included in the image
+- Optimise autoloader for production
+- PHP-Opcache install for production
+- dockerignore and gitignore files
+
+
 
 # Makefile commandline help:
 1. 'make up' - start project 
