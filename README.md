@@ -10,9 +10,8 @@ All you need to do, is install the Docker
  3. Clone this repository $`git clone https://github.com/binarick/php-skeleton`
  4. (dont need) if you wont you can recreate 'composer.json' $`docker-compose run --rm php-cli composer init`
  5. Star initialisation $`make first-run` (composer install)
- 6. $`make up`
- 7. (dont need) Rename project
- 8. Done !!! You project ready for work
+ 6. Start project $`make up`
+ Done !!! You project ready for work
 
 #That you will get:
  1. php:7.4-fpm
