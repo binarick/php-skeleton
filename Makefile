@@ -1,5 +1,6 @@
 up: dc-up
 init: dc-down dc-pull dc-build dc-up env-init
+first-run: env-init
 
 # DEVELOPMENT
 dc-up:
@@ -12,16 +13,20 @@ dc-build:
 	docker-compose build
 
 # COMPOSER
-env-init:
-	docker-compose run --rm php-cli composer init
+env-first-init:
+	#docker-compose run --rm php-cli composer init
 	docker-compose run --rm php-cli composer install
+
+# Every day start init
+env-init:
+	docker-compose run --rm php-cli composer update
 
 # PRODUCTION
 #cli command example: REGISTRY_ADDRESS=registry IMAGE_TAG=0 make build-prod
 build-prod:
 	docker build --file=project/docker/production/nginx.dockerfile --tag ${REGISTRY_ADDRESS}/nginx:${IMAGE_TAG} project
 	docker build --file=project/docker/production/fpm.dockerfile --tag ${REGISTRY_ADDRESS}/php-fpm:${IMAGE_TAG} project
-	#docker build --pull --file=project/docker/production/cli.dockerfile --tag ${REGISTRY_ADDRESS}/php-cli:${IMAGE_TAG} project
+	docker build --file=project/docker/production/cli.dockerfile --tag ${REGISTRY_ADDRESS}/php-cli:${IMAGE_TAG} project
 
 push-prod:
 	docker push ${REGISTRY_ADDRESS}/nginx:${IMAGE_TAG}

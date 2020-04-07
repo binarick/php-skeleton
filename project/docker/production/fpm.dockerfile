@@ -4,7 +4,7 @@ RUN apt-get update
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer --quiet
 ENV COMPOSER_ALLOW_SUPERUSER 1
 WORKDIR /app
-COPY ./composer.json ./
+COPY ./composer.json ./composer.lock ./
 RUN composer install --no-dev --prefer-dist --optimize-autoloader
 
 FROM php:7.4-fpm
